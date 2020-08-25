@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 2,
   },
   media: {
-    height: 600,
+    height: 300,
   },
 }));
 

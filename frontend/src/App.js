@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import MoviesList from './components/MoviesList';
+import AddMovie from './components/AddMovie';
 
 export default function App() {
   const [movies, setMovie] = useState([]);
@@ -29,11 +30,14 @@ export default function App() {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <Route
-          path='/'
-          exact
-          component={() => <MoviesList movies={movies} />}
-        />
+        <Switch>
+          <Route
+            path='/'
+            exact
+            component={() => <MoviesList movies={movies} />}
+          />
+          <Route path='/add-movie' exact component={AddMovie} />
+        </Switch>
       )}
     </Router>
   );
